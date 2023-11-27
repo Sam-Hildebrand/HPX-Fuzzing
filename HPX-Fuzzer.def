@@ -27,7 +27,7 @@ From: aflplusplus/aflplusplus
 	mkdir build && cd build 
 	cmake -DCMAKE_PREFIX_PATH=/Fuzzing/hpx/build ..
 	make all
-	./foreach_fuzzer
+
 %labels
 	Author Sam Hildebrand
 	Version v0.0.1

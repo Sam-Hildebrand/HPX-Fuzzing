@@ -20,6 +20,7 @@ From: aflplusplus/aflplusplus
 	cd /Fuzzing; git clone https://github.com/STEllAR-GROUP/hpx.git
 	mkdir /Fuzzing/hpx/build; cd /Fuzzing/hpx/build
 	cmake -DBoost_ROOT=/Fuzzing/boost_1_82_0 -DHwloc_ROOT=/Fuzzing/hwloc-2.10.0rc2 -DHPX_WITH_FETCH_ASIO=ON -DHPX_WITH_MALLOC=system ..
+	cmake --build . --target install
 %labels
 	Author Sam Hildebrand
 	Version v0.0.1

@@ -1,0 +1,25 @@
+Bootstrap: docker
+From: aflplusplus/aflplusplus
+
+%post
+	echo "Building AFL++:"
+	cd /AFLplusplus
+	make
+	mkdir /Fuzzing
+	cd /Fuzzing
+	echo "\nDownloading Boost:"
+	wget https://boostorg.jfrog.io/artifactory/main/release/1.82.0/source/boost_1_82_0.tar.gz
+	tar -xvzf boost_1_82_0.tar.gz
+	rm boost_1_82_0.tar.gz
+	echo "\nDownloading and Building Hwloc:"
+	wget https://download.open-mpi.org/release/hwloc/v2.10/hwloc-2.10.0rc2.tar.gz
+	tar -xvzf hwloc-2.10.0rc2.tar.gz
+	rm hwloc-2.10.0rc2.tar.gz
+	cd /Fuzzing/hwloc-2.10.0rc2; ./configure; make; make install
+	echo "\nCloning and Building HPX:"
+	cd /Fuzzing; git clone https://github.com/STEllAR-GROUP/hpx.git
+	mkdir /Fuzzing/hpx/build; cd /Fuzzing/hpx/build
+	cmake -DBoost_ROOT=/Fuzzing/boost_1_82_0 -DHwloc_ROOT=/Fuzzing/hwloc-2.10.0rc2 -DHPX_WITH_FETCH_ASIO=ON -DHPX_WITH_MALLOC=system ..
+%labels
+	Author Sam Hildebrand
+	Version v0.0.1

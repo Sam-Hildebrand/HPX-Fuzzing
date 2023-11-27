@@ -22,7 +22,8 @@ From: aflplusplus/aflplusplus
 	cmake -DBoost_ROOT=/Fuzzing/boost_1_82_0 -DHwloc_ROOT=/Fuzzing/hwloc-2.10.0rc2 -DHPX_WITH_FETCH_ASIO=ON -DHPX_WITH_MALLOC=system ..
 	cmake --build . --target install
 	cd /Fuzzing
-	git clone
+	git clone https://github.com/Sam-Hildebrand/HPX-Fuzzing
+	cd HPX-Fuzzing/
 	mkdir build && cd build 
 	cmake -DCMAKE_PREFIX_PATH=/Fuzzing/hpx/build ..
 	make all

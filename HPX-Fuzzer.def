@@ -28,7 +28,7 @@ From: aflplusplus/aflplusplus
 	cmake -DCMAKE_PREFIX_PATH=/usr/local -DCMAKE_CXX_COMPILER=/AFLplusplus/afl-g++ ..
 	make all
 
-%startscript
+%runscript
 	cd ~
 	/AFLplusplus/afl-fuzz -i /Fuzzing/HPX-Fuzzing/inputs -o Fuzzing-Output -- /Fuzzing/HPX-Fuzzing/build/foreach_fuzzer
 

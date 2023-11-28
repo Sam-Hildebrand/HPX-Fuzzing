@@ -25,7 +25,7 @@ From: aflplusplus/aflplusplus
 	git clone https://github.com/Sam-Hildebrand/HPX-Fuzzing
 	cd HPX-Fuzzing/
 	mkdir build && cd build 
-	cmake -DCMAKE_PREFIX_PATH=/Fuzzing/hpx/build ..
+	cmake -DCMAKE_PREFIX_PATH=/usr/local ..
 	make all
 
 %labels

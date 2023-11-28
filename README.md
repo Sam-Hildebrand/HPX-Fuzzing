@@ -10,4 +10,12 @@ The container is built using the `HPX-Fuzzer.def` file. You can build a singular
 It's also of note that all of the singularity commands work with SLURM, and the `.sif` file is written back to your working directory, so you could easily build the container image on one partition: `srun -p [build partition] singularity build HPX-Fuzzer.sif HPX-Fuzzer.def`, then run the fuzz test on a different partition: `srun -p [fuzzing partition] singularity instance run --writable-tmpfs HPX-Fuzzer.sif Fuzzer1`.
 
 # Time Comparison of Build and Run Operations
-As mentioned earlier, both the build and fuzzing operations can take a significant amount of time. The outputs of both `time singularity build ...` and `time singularity instance run ..` are included below:
+As mentioned earlier, building the container can take a significant amount of time. The outputs of both `time singularity build ...` is included below:
+
+#### `time singularity build ...`:
+```
+...
+real	65m2.450s
+user	84m26.537s
+sys	7m13.720s
+```

@@ -27,10 +27,10 @@ From: aflplusplus/aflplusplus
 	mkdir build && cd build 
 	cmake -DCMAKE_PREFIX_PATH=/usr/local -DCMAKE_CXX_COMPILER=/AFLplusplus/afl-g++ ..
 	make all
+	chmod +x /Fuzzing/HPX-Fuzzing/HPX-Fuzz.sh
 
 %runscript
-	cd ~
-	/AFLplusplus/afl-fuzz -i /Fuzzing/HPX-Fuzzing/inputs -o Fuzzing-Output -- /Fuzzing/HPX-Fuzzing/build/foreach_fuzzer
+	/Fuzzing/HPX-Fuzzing/HPX-Fuzz.sh
 
 %labels
 	Author Sam Hildebrand

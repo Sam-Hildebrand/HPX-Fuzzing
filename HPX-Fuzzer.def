@@ -30,7 +30,7 @@ From: aflplusplus/aflplusplus
 	make all
 
 %runscript
-	/AFLplusplus/afl-fuzz -i /Fuzzing/HPX-Fuzzing/inputs -o Fuzzing-Output -- /Fuzzing/HPX-Fuzzing/build/foreach_fuzzer >> HPX-Fuzzing.log
+	/AFLplusplus/afl-fuzz -E 5000 -i /Fuzzing/HPX-Fuzzing/inputs -o Fuzzing-Output -- /Fuzzing/HPX-Fuzzing/build/foreach_fuzzer >> HPX-Fuzzing.log
 
 %labels
 	Author Sam Hildebrand

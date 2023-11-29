@@ -24,7 +24,7 @@ int main() {
     std::vector<int> c(BUF_SIZE);
 
     for(int i = 0; i < BUF_SIZE; i++){
-        c.push_back(getchar());
+        c[i] = getchar();
     }
 
     set_42 f;

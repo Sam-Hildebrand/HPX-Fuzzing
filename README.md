@@ -17,5 +17,5 @@ As mentioned earlier, building the container can take a significant amount of ti
 ...
 real	65m2.450s
 user	84m26.537s
-sys	7m13.720s
+sys	    7m13.720s
 ```

@@ -5,7 +5,7 @@
 # WARNING: "--force" will overwrite the file "HPX-Fuzzer.sif" in the 
 # working directory. If you want to save an instance file from a run,
 # just rename it.
-singularity build --force HPX-Fuzzer.sif HPX-Fuzzer.def >> Fuzzing-Setup.log
+singularity build --force HPX-Fuzzer.sif HPX-Fuzzer.def
 
 # Kill the previous Fuzzing Container
 singularity instance stop Fuzzer1

@@ -6,6 +6,9 @@
 # working directory. If you want to save an instance file from a run,
 # just rename it.
 singularity build --force HPX-Fuzzer.sif HPX-Fuzzer.def >> Fuzzing-Setup.log
-singularity instance run --writable-tmpfs HPX-Fuzzer.sif Fuzzer1
-singularity shell instance://Fuzzer1
+
+# Kill the previous Fuzzing Container
 singularity instance stop Fuzzer1
+
+# Run the instance. Start fuzzing
+singularity instance run --writable-tmpfs HPX-Fuzzer.sif Fuzzer1
